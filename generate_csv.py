@@ -42,7 +42,6 @@ def main():
     tables = build_tables()
     for table in tables.keys():
         with open("out/"+table.replace(" ", "-")+".csv", "w") as f:
-            f.write("Name\tDescription\n")
             for name, desc in tables[table]:
                 f.write("{}\t{}\n".format(name, desc))
 
