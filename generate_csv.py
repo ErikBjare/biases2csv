@@ -2,11 +2,11 @@
 
 import logging
 import subprocess
-import re
 
 from bs4 import BeautifulSoup
 
 subprocess.call("wget https://en.wikipedia.org/wiki/List_of_cognitive_biases -O page.html", shell=True)
+
 
 def rm_brackets(string):
     new_string = ""
@@ -18,6 +18,7 @@ def rm_brackets(string):
         else:
             new_string += sub_string
     return new_string
+
 
 def build_tables():
     tables = {}
@@ -38,10 +39,11 @@ def build_tables():
             tables[heading] = rows
     return tables
 
+
 def main():
     tables = build_tables()
     for table in tables.keys():
-        with open("out/"+table.replace(" ", "-")+".csv", "w") as f:
+        with open("out/" + table.replace(" ", "-") + ".csv", "w") as f:
             for name, desc in tables[table]:
                 f.write("{}\t{}\n".format(name, desc))
 
