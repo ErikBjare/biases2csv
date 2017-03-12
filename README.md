@@ -10,4 +10,4 @@ Cognitive Biases to CSV
 ###What it doesn't do (directly)
  - Save the world
  - Create superhuman intelligence
- - Walk your (possibly non-existant) dog
+ - Walk your (possibly non-existent) dog
